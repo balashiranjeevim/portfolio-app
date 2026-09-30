@@ -1,1 +1,42 @@
-<p>hero works!</p>
+<section class="mt-30">
+  <article class="flex flex-wrap gap-5">
+    <div class="">
+      <div
+        class="inline-flex py-2 px-4 bg-slate-200 rounded-full border border-black gap-2 items-center text-xs text-black mb-4"
+      >
+        <span class="w-3 h-3 rounded-full bg-blue-700 animate-pulse"></span>
+        <span>Welcome to my Portfolio</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-blue-700 mb-4">
+        Hello, <br />
+        I'm
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">
+          BalaShiranjeevi
+        </span>
+      </h1>
+      <div
+        class="inline-flex items-center gap-2 px-3 py-2 bg-slate-200 boder border-black rounded-lg border border-black text-lg mb-4"
+      >
+        <p>{{ displayText() }}</p>
+        <span class="typing-cursor inline-block w-0.5 h-5 bg-black"></span>
+      </div>
+
+      <p class="text-slate-400 text-base sm:text-lg leading-relaxed mb-4">
+        Software Developer| Fullstack Developement| Agentic AI
+      </p>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <button
+          class="bg-slate-200 px-4 py-2 rounded-lg border-2 border-black text-black font-bold"
+        >
+          Learn More
+        </button>
+        <button class="bg-black px-4 py-2 rounded-lg border-2 border-black text-white font-bold">
+          Get Resume
+        </button>
+      </div>
+    </div>
+    <div>
+      <img src="/images/profile.jpg" class="w-auto h-100 rounded-xl" />
+    </div>
+  </article>
+</section>
