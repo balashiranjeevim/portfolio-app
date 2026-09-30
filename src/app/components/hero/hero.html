@@ -1,42 +1,50 @@
-<section class="mt-30">
-  <article class="flex flex-wrap gap-5">
-    <div class="">
+<section class="flex min-h-screen items-center px-6 pt-24 pb-10">
+  <article class="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-2">
+    <div>
       <div
-        class="inline-flex py-2 px-4 bg-slate-200 rounded-full border border-black gap-2 items-center text-xs text-black mb-4"
+        class="mb-4 inline-flex items-center gap-2 rounded-full border border-black bg-slate-200 px-4 py-2 text-xs text-black"
       >
-        <span class="w-3 h-3 rounded-full bg-blue-700 animate-pulse"></span>
+        <span class="h-3 w-3 animate-pulse rounded-full bg-blue-700"></span>
         <span>Welcome to my Portfolio</span>
       </div>
-      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-blue-700 mb-4">
+
+      <h1 class="mb-4 text-4xl font-extrabold tracking-tight text-blue-700 sm:text-6xl">
         Hello, <br />
         I'm
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">
+        <span class="bg-gradient-to-r from-cyan-400 to-teal-300 bg-clip-text text-transparent">
           BalaShiranjeevi
         </span>
       </h1>
+
       <div
-        class="inline-flex items-center gap-2 px-3 py-2 bg-slate-200 boder border-black rounded-lg border border-black text-lg mb-4"
+        class="mb-4 inline-flex items-center gap-2 rounded-lg border border-black bg-slate-200 px-3 py-2 text-lg"
       >
         <p>{{ displayText() }}</p>
-        <span class="typing-cursor inline-block w-0.5 h-5 bg-black"></span>
+        <span class="typing-cursor inline-block h-5 w-0.5 bg-black"></span>
       </div>
 
-      <p class="text-slate-400 text-base sm:text-lg leading-relaxed mb-4">
-        Software Developer| Fullstack Developement| Agentic AI
+      <p class="mb-4 text-base leading-relaxed text-slate-400 sm:text-lg">
+        Software Developer | Fullstack Development | Agentic AI
       </p>
+
       <div class="flex flex-wrap gap-4 pt-2">
         <button
-          class="bg-slate-200 px-4 py-2 rounded-lg border-2 border-black text-black font-bold"
+          class="rounded-lg border-2 border-black bg-slate-200 px-4 py-2 font-bold text-black"
         >
           Learn More
         </button>
-        <button class="bg-black px-4 py-2 rounded-lg border-2 border-black text-white font-bold">
+        <button class="rounded-lg border-2 border-black bg-black px-4 py-2 font-bold text-white">
           Get Resume
         </button>
       </div>
     </div>
-    <div>
-      <img src="/images/profile.jpg" class="w-auto h-100 rounded-xl" />
+
+    <div class="flex justify-center md:justify-end">
+      <img
+        src="/images/profile.jpg"
+        alt="Bala Shiranjeevi Profile image"
+        class="h-full w-auto max-w-md rounded-xl object-cover sm:h-110"
+      />
     </div>
   </article>
 </section>
