@@ -1,42 +1,48 @@
 <header>
   <nav
-    class="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-white/80 backdrop-blur-md border-3 border-black rounded-full px-4 py-2 text-sm flex items-center gap-1"
+    class="fixed bottom-3 left-1/2 z-50 flex w-[calc(100%-1rem)] -translate-x-1/2 items-center justify-between gap-0 rounded-full border-3 border-black bg-white/90 px-1 py-1 text-sm backdrop-blur-md sm:top-4 sm:bottom-auto sm:w-auto sm:justify-center sm:gap-1 sm:px-4 sm:py-2"
   >
     <a
-      class="flex items-center gap-1 px-4 py-2 rounded-full hover:bg-cyan-400 transition-colors duration-400"
+      aria-label="Home"
+      class="flex min-h-11 flex-1 items-center justify-center gap-1 rounded-full px-1 py-2 transition-colors duration-300 hover:bg-cyan-400 sm:flex-none sm:px-4"
     >
       <span><app-icon name="home" className="w-4 h-4"></app-icon></span>
-      <span>Home</span>
+      <span class="hidden sm:inline">Home</span>
     </a>
     <a
-      class="flex items-center gap-1 px-4 py-2 rounded-full hover:bg-cyan-400 transition-colors duration-400"
+      aria-label="Skills"
+      class="flex min-h-11 flex-1 items-center justify-center gap-1 rounded-full px-1 py-2 transition-colors duration-300 hover:bg-cyan-400 sm:flex-none sm:px-4"
     >
       <span><app-icon name="code" className="w-4 h-4"></app-icon></span>
-      <span>Skills</span>
+      <span class="hidden sm:inline">Skills</span>
     </a>
     <a
-      class="flex items-center gap-1 px-4 py-2 rounded-full hover:bg-cyan-400 transition-colors duration-400"
+      aria-label="Experience"
+      class="flex min-h-11 flex-1 items-center justify-center gap-1 rounded-full px-1 py-2 transition-colors duration-300 hover:bg-cyan-400 sm:flex-none sm:px-4"
     >
       <span><app-icon name="briefcase" className="w-4 h-4"></app-icon></span>
-      <span>Experience</span>
+      <span class="hidden sm:inline">Experience</span>
     </a>
     <a
-      class="flex items-center gap-1 px-4 py-2 rounded-full hover:bg-cyan-400 transition-colors duration-400"
+      aria-label="Education"
+      class="flex min-h-11 flex-1 items-center justify-center gap-1 rounded-full px-1 py-2 transition-colors duration-300 hover:bg-cyan-400 sm:flex-none sm:px-4"
     >
       <span><app-icon name="graduation-cap" className="w-4 h-4"></app-icon></span>
-      <span>Education</span>
+      <span class="hidden sm:inline">Education</span>
     </a>
     <a
-      class="flex items-center gap-1 px-4 py-2 rounded-full hover:bg-cyan-400 transition-colors duration-400"
+      aria-label="Projects"
+      class="flex min-h-11 flex-1 items-center justify-center gap-1 rounded-full px-1 py-2 transition-colors duration-300 hover:bg-cyan-400 sm:flex-none sm:px-4"
     >
       <span><app-icon name="laptop" className="w-4 h-4"></app-icon></span>
-      <span>Projects</span>
+      <span class="hidden sm:inline">Projects</span>
     </a>
     <a
-      class="flex items-center gap-1 px-4 py-2 rounded-full hover:bg-cyan-400 transition-colors duration-400"
+      aria-label="Contact"
+      class="flex min-h-11 flex-1 items-center justify-center gap-1 rounded-full px-1 py-2 transition-colors duration-300 hover:bg-cyan-400 sm:flex-none sm:px-4"
     >
       <span><app-icon name="mail" className="w-4 h-4"></app-icon></span>
-      <span>contact</span>
+      <span class="hidden sm:inline">Contact</span>
     </a>
   </nav>
 </header>

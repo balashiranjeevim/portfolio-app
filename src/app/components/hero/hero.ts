@@ -10,7 +10,7 @@ export class Hero implements OnInit, OnDestroy {
   readonly titles: string[] = [
     'FullStack Developer',
     'Product-first development',
-    'B-Tech(Artificial Intelligence)',
+    'B-Tech(Artificial Intelligence & Data Science)',
   ];
 
   displayText = signal('');
