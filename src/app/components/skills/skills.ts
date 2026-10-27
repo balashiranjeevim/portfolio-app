@@ -40,6 +40,29 @@ export class Skills {
         { name: 'Node.js', icon: 'code' },
         { name: 'Express', icon: 'code' },
         { name: 'MongoDB', icon: 'database' },
+        { name: 'REST APIs', icon: 'code' },
+      ],
+    },
+    {
+      title: 'Tools & Platforms',
+      icon: 'laptop',
+      iconBgColor: 'bg-purple-500/10 text-purple-500',
+      skills: [
+        { name: 'Git & GitHub', icon: 'github' },
+        { name: 'Linux', icon: 'laptop' },
+        { name: 'VS Code', icon: 'code' },
+        { name: 'Postman', icon: 'code' },
+      ],
+    },
+    {
+      title: 'AI & Data Foundations',
+      icon: 'sparkles',
+      iconBgColor: 'bg-cyan-500/10 text-cyan-500',
+      skills: [
+        { name: 'Agentic AI', icon: 'sparkles' },
+        { name: 'Python', icon: 'code' },
+        { name: 'Machine Learning', icon: 'brain' },
+        { name: 'Data Structures', icon: 'database' },
       ],
     },
   ];

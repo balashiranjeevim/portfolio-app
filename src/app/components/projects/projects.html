@@ -1,1 +1,129 @@
-<p>projects works!</p>
+<div class="space-y-8">
+  <!-- Section Header -->
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <div class="space-y-3">
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-black bg-cyan-100/80 px-4 py-1.5 text-xs font-bold text-cyan-950"
+      >
+        <app-icon name="laptop" className="w-4 h-4 text-cyan-900"></app-icon>
+        <span>Featured Portfolio</span>
+      </div>
+      <h2 class="font-serif text-3xl font-bold text-blue-950 sm:text-5xl">Projects</h2>
+      <p class="max-w-2xl text-base text-slate-600 sm:text-lg">
+        Explore a curated selection of full-stack platforms, client interfaces, and AI experiments
+        I've built.
+      </p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex flex-wrap gap-2">
+      @for (category of categories; track category) {
+        <button
+          type="button"
+          (click)="setCategory(category)"
+          class="cursor-pointer rounded-full border border-black px-4 py-1.5 text-xs sm:text-sm font-semibold transition-all duration-200"
+          [class.bg-black]="selectedCategory() === category"
+          [class.text-white]="selectedCategory() === category"
+          [class.bg-white]="selectedCategory() !== category"
+          [class.text-slate-800]="selectedCategory() !== category"
+          [class.hover:bg-slate-100]="selectedCategory() !== category"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    @for (project of filteredProjects; track project.title) {
+      <div
+        class="group flex flex-col justify-between rounded-2xl border-2 border-black bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+      >
+        <div>
+          <!-- Top Row -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span
+                class="rounded-full border border-slate-300 bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-700"
+              >
+                {{ project.category }}
+              </span>
+              @if (project.featured) {
+                <span
+                  class="rounded-full border border-emerald-500 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-800"
+                >
+                  Featured
+                </span>
+              }
+            </div>
+
+            <div
+              class="flex h-9 w-9 items-center justify-center rounded-lg border border-black bg-cyan-50 text-blue-950 transition-colors group-hover:bg-cyan-100"
+            >
+              <app-icon [name]="project.icon" className="w-5 h-5"></app-icon>
+            </div>
+          </div>
+
+          <!-- Project Title & Description -->
+          <h3
+            class="mt-4 text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-950"
+          >
+            {{ project.title }}
+          </h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-slate-600">
+            {{ project.description }}
+          </p>
+
+          <!-- Tech Stack Tags -->
+          <div class="mt-5 flex flex-wrap gap-1.5">
+            @for (tag of project.tags; track tag) {
+              <span
+                class="rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-700"
+              >
+                {{ tag }}
+              </span>
+            }
+          </div>
+        </div>
+
+        <!-- Links Footer -->
+        <div class="mt-6 flex items-center gap-3 pt-4 border-t border-slate-100">
+          @if (project.githubUrl) {
+            <a
+              [href]="project.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-lg border border-black bg-white px-3.5 py-2 text-xs font-bold text-slate-900 transition-colors hover:bg-slate-100"
+            >
+              <app-icon name="github" className="w-4 h-4"></app-icon>
+              <span>Repository</span>
+            </a>
+          }
+
+          @if (project.liveUrl) {
+            <a
+              [href]="project.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-lg bg-blue-950 px-3.5 py-2 text-xs font-bold text-white transition-colors hover:bg-blue-900"
+            >
+              <app-icon name="external-link" className="w-4 h-4"></app-icon>
+              <span>Live Demo</span>
+            </a>
+          } @else {
+            <a
+              [href]="project.githubUrl || 'https://github.com/balashiranjeevim'"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 transition-colors hover:text-black"
+            >
+              <span>View details</span>
+              <app-icon name="external-link" className="w-3.5 h-3.5"></app-icon>
+            </a>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

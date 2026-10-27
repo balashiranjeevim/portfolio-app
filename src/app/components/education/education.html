@@ -1,1 +1,110 @@
-<p>education works!</p>
+<div class="space-y-8">
+  <div class="space-y-3">
+    <div
+      class="inline-flex items-center gap-2 rounded-full border border-black bg-cyan-100/80 px-4 py-1.5 text-xs font-bold text-cyan-950"
+    >
+      <app-icon name="graduation-cap" className="w-4 h-4 text-cyan-900"></app-icon>
+      <span>Academic Foundation</span>
+    </div>
+    <h2 class="font-serif text-3xl font-bold text-blue-950 sm:text-5xl">Education</h2>
+    <p class="max-w-2xl text-base text-slate-600 sm:text-lg">
+      My academic journey, coursework, and continuous learning pathway in Artificial Intelligence,
+      Data Science, and Software Development.
+    </p>
+  </div>
+
+  <div class="relative pl-6 sm:pl-8">
+    <!-- Continuous Vertical Timeline Spine -->
+    <div
+      class="absolute left-2.5 sm:left-3.5 top-3 bottom-6 w-0.5 bg-gradient-to-b from-black via-slate-400 to-black/30"
+    ></div>
+
+    <div class="space-y-8">
+      @for (item of educationList; track item.degree) {
+        <div class="relative group">
+          <!-- Timeline Node Icon -->
+          <div
+            class="absolute -left-6 sm:-left-8 top-1.5 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-black bg-white shadow-sm transition-transform duration-200 group-hover:scale-110"
+            [class.bg-emerald-100]="item.highlight"
+          >
+            <app-icon
+              [name]="item.icon"
+              [className]="
+                item.highlight ? 'w-4 h-4 text-emerald-800' : 'w-4 h-4 text-slate-800'
+              "
+            ></app-icon>
+          </div>
+
+          <!-- Card Content -->
+          <div
+            class="rounded-2xl border-2 border-black bg-white p-5 sm:p-7 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+            [class.ring-2]="item.highlight"
+            [class.ring-emerald-400]="item.highlight"
+          >
+            <div
+              class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"
+            >
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-xl sm:text-2xl font-bold text-slate-900">
+                    {{ item.degree }}
+                  </h3>
+                  @if (item.highlight) {
+                    <span
+                      class="inline-flex items-center gap-1 rounded-full border border-emerald-600 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-800"
+                    >
+                      <span class="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                      Current Degree
+                    </span>
+                  }
+                </div>
+                <p class="mt-1 text-base sm:text-lg font-semibold text-emerald-700">
+                  {{ item.field }}
+                </p>
+                <div
+                  class="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-600 font-medium"
+                >
+                  <span class="text-slate-800">{{ item.institution }}</span>
+                  @if (item.location) {
+                    <span class="inline-flex items-center gap-1 text-slate-500">
+                      <app-icon name="map-pin" className="w-3.5 h-3.5"></app-icon>
+                      {{ item.location }}
+                    </span>
+                  }
+                </div>
+              </div>
+
+              <div class="shrink-0 pt-1 sm:pt-0">
+                <span
+                  class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-slate-100 px-3 py-1 text-xs sm:text-sm font-semibold text-slate-700"
+                >
+                  <app-icon name="calendar" className="w-3.5 h-3.5 text-slate-500"></app-icon>
+                  {{ item.period }}
+                </span>
+              </div>
+            </div>
+
+            <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
+              {{ item.description }}
+            </p>
+
+            <div class="mt-5 pt-4 border-t border-slate-100">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Key Topics & Technologies:
+              </span>
+              <div class="mt-2.5 flex flex-wrap gap-2">
+                @for (skill of item.skills; track skill) {
+                  <span
+                    class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700 transition-colors hover:border-black hover:bg-slate-100"
+                  >
+                    {{ skill }}
+                  </span>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
