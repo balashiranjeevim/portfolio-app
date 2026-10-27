@@ -20,6 +20,7 @@
     "@angular/platform-server": "^22.1.0",
     "@angular/router": "^22.1.0",
     "@angular/ssr": "^22.1.8",
+    "@netlify/angular-runtime": "^4.0.0",
     "express": "^5.1.0",
     "lucide": "^1.48.0",
     "rxjs": "~7.8.0",
